@@ -1,4 +1,7 @@
 import './App.css'
+import reactLogo from './assets/react.svg'
+import ButtonA from './ButtonA';
+import ButtonB from './ButtonB';
 
 function BasicExpressions() {
   const name = "John";
@@ -192,30 +195,171 @@ function ElementExpressions() {
 //   )
 // }
 
+
+// 조건부 렌더링과 리스트 렌더링 예제
+// function App() {
+//   const books = [
+//     { id: 1, title: 'React Basics', published: true, publisher: 'Manning' },
+//     { id: 2, title: 'Advanced Hooks', published: false, publisher: 'OReilly' },
+//     { id: 3, title: 'JSX in Depth', published: true, publisher: 'Packt' }
+//   ];
+
+//   const publisheds = books.filter(book => book.published)
+
+//   return (
+//     <>
+//       {publisheds.length > 0 && <h2>Published Books</h2>}
+//       {publisheds.length ?
+//         publisheds.map(book =>
+//           <article key={book.id}>
+//             <strong>{book.title}</strong>
+//             <em> - {book.publisher}</em>
+//           </article>
+//         )
+//         : <p>No published book found.</p>
+//       }
+//     </>
+//   )
+// }
+
+// JSX 속성
+// 예약어는 대체되는 속성으로 사용
+// 기존 속성명을 카멜케이스로 사용
+// 중괄호 표현식 사용 가능
+// function App() {
+
+//   const disableInput = false
+
+//   return (
+//     <>
+//       {/* <label
+//         htmlFor="username"      // for(예약어)
+//       >
+//         Username:
+//       </label> */}
+//       <input
+//         type="text"
+//         id="username"
+//         className='input-field' // class(예약어)
+//         autoComplete='off'      // autocomplete
+
+//         maxLength={20}          // maxlength
+//         spellCheck={true}       // spellcheck
+//         readOnly={false}        // readonly
+//         tabIndex={0}            // tabindex
+
+//         disabled={disableInput}
+//         placeholder={
+//           disableInput ? "(DISABLED)" : "Enter your name."
+//         }
+//       />
+//     </>
+//   )
+// }
+
+
+// 이미지 불러오기
+// const reactLogoAlt = 'React Logo'
+// console.log(reactLogo)
+
+// function App() {
+//   return (
+//     <>
+//       <img
+//         src={reactLogo}
+//         alt={reactLogoAlt}
+//         width={256}
+//         height={228}
+//       />
+//     </>
+//   )
+// }
+
+
+// 스타일 적용 1
+// function App() {
+//   return (
+//     <>
+//       <span style={
+//         {
+//           fontWeight: "bold",
+//           fontStyle: "italic"
+//         }
+//       }>
+//         Bold & Italic
+//       </span>
+//     </>
+//   )
+// }
+
+// // 스타일 적용2
+// function App() {
+//   // 스타일 정보를 객체로 저장하여 불러오기 가능
+//   const divStyle = {
+//     backgroundColor: 'lightblue',
+//     margin: '12px',
+//     padding: '20px',
+//     borderRadius: '8px'
+//   }
+
+//   return (
+//     <>
+//       <div style={divStyle}>
+//         DIV 1
+//       </div>
+//       <div
+//         style={{
+//           // 객체 스프레딩 - 기존의 객체의 속성들을 활용하여 새로운 객체를 만드는데 사용
+//           // ...객체명 후 쉼표로 속성을 이어 붙여서 수정 및 속성 추가
+//           ...divStyle,
+//           backgroundColor: 'lightgreen',
+//           color: 'darkblue',
+//           fontWeight: 'bold'
+//         }}
+//       >
+//         DIV 2
+//       </div>
+//     </>
+//   )
+// }
+
+// 스타일 적용 3
+// 삼항연산자로 스타일 교체 가능
+// function App() {
+//   const styleA = {
+//     color: 'darkred',
+//     fontWeight: 'bold'
+//   }
+//   const styleB = {
+//     color: 'navy',
+//     textDecoration: 'underline'
+//   }
+//   const isPrimary = true
+
+//   return (
+//     <>
+//       <div style={isPrimary ? styleA : styleB}>
+//         This text has dynamic styling.
+//       </div>
+//       <span
+//         style={{
+//           fontSize: isPrimary ? '1.5em' : '1em',
+//           opacity: isPrimary ? 1 : 0.5
+//         }}
+//       >
+//         So does this text.
+//       </span>
+//     </>
+//   )
+// }
+
 function App() {
-  const books = [
-    { id: 1, title: 'React Basics', published: true, publisher: 'Manning' },
-    { id: 2, title: 'Advanced Hooks', published: false, publisher: 'OReilly' },
-    { id: 3, title: 'JSX in Depth', published: true, publisher: 'Packt' }
-  ];
-
-  const publisheds = books.filter(book => book.published)
-
   return (
     <>
-      {publisheds.length > 0 && <h2>Published Books</h2>}
-      {publisheds.length ?
-        publisheds.map(book =>
-          <article key={book.id}>
-            <strong>{book.title}</strong>
-            <em> - {book.publisher}</em>
-          </article>
-        )
-        : <p>No published book found.</p>
-      }
+      <ButtonA />
+      <ButtonB />
     </>
   )
 }
-
 
 export default App
