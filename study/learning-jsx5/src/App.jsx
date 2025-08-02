@@ -63,6 +63,8 @@ import UnitSelector from './UnitSelector'
 //   )
 // }
 
+
+// 다수의 status가 필요하다면 키와 밸류를 가진 객체로 state 선언 하여 사용
 function Form() {
   const [formData, setFormData] = useState(
     {
